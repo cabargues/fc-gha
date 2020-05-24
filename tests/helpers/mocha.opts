@@ -1,0 +1,9 @@
+--require babel-core/register
+--require tests/helpers/enzyme.js
+--require jsdom-global/register
+--recursive
+--colors
+--full-trace
+--reporter dot
+--require ignore-styles
+src/**/*-test.js

@@ -1,0 +1,125 @@
+@import '~flystyles/dist/css/flystyles.min.css';
+@import '~github-markdown-css';
+
+:root {
+  --transition: all 200ms ease-out;
+}
+
+*:focus {
+  border: 1px solid black !important;
+}
+
+.Docs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Docs-nav {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem 0 2rem;
+  transition: var(--transition);
+}
+.is-open .Docs-nav {
+  padding-left: 190px;
+}
+
+.Docs-navMenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.is-open .Docs-navMenu {
+  display: block;
+  transform: translateX(0);
+}
+
+.Docs-icon {
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.Docs-navTitle {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.Docs-content {
+  width: 100%;
+  transition: var(--transition);
+}
+.is-open .Docs-content {
+  padding-left: 160px;
+}
+
+.Docs-navVersion {
+  font-size: 0.5rem;
+}
+
+@media (min-width: 767px) {
+  .Docs {
+    flex-wrap: nowrap;
+  }
+
+  .Docs-nav {
+    display: block;
+    width: 180px;
+    padding: 2rem 1rem;
+    border-right: 1px solid #eee;
+  }
+
+  .Docs-navMenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    position: relative !important;
+    transform: none !important;
+    background: white;
+  }
+
+  .Docs-icon {
+    display: none;
+  }
+
+  .Docs-content {
+    width: calc(100% - 180px);
+  }
+}
+
+.MenuLink {
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+  font-size: 0.96rem;
+  transition: all 200ms;
+}
+
+.MenuLink.is-active a,
+.MenuLink:hover a {
+  text-decoration: underline;
+}
+
+.fullHeight {
+  height: 100%;
+  min-height: 100%;
+}
+
+.Autocomplete-options {
+  transition: none;
+}
+
+.Tabs {
+  margin: 0;
+}
